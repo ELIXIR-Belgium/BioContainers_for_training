@@ -1,14 +1,15 @@
 # Best Practices for galaxy tutorial containers
 
 ## Requirements 
-### Recommended 
-* ___tools.yaml___: describes the Tool Shed tools used in the tutorial
-* ___data-library.yaml___: describes the input datasets
-* ___workflows folder___: contains one or more workflows with all steps in the tutorial
 
-### Optional
-* ___data-manager.yaml___: describes the reference data required by tools
-* ___tours folder___: contains one or more yaml files describing interactive tours
+#### Recommended
+* __tools.yaml__: describes the Tool Shed tools used in the tutorial
+* __data-library.yaml__: describes the input datasets
+* __workflows folder__: contains one or more workflows with all steps in the tutorial
+
+#### Optional
+* __data-manager.yaml__: describes the reference data required by tools
+* __tours folder__: contains one or more yaml files describing interactive tours
 
 ## Format
 
@@ -21,20 +22,44 @@ install_repository_dependencies: True
 install_resolver_dependencies: True
 
 tools:
-- name: deeptools_compute_matrix
-  owner: bgruening
+- name: tool1
+  owner: owner
   revisions:
-  - fd1275e01605
-  tool_panel_section_label: Tools from workflows
+  - example
+  tool_panel_section_label: "Section1"
   tool_shed_url: https://toolshed.g2.bx.psu.edu
-- name: deeptools_plot_profile
-  owner: bgruening
+- name: tool2
+  owner: owner
   revisions:
-  - aac8444d6681
-  tool_panel_section_label: Tools from workflows
+  - example
+  tool_panel_section_label: "Section2"
   tool_shed_url: https://toolshed.g2.bx.psu.edu
 ```
 
+
+
+
+```
+---
+destination:
+  type: library
+  name: GTN - Material
+  description: Galaxy Training Network Material
+  synopsis: Galaxy Training Network Material. See https://training.galaxyproject.org
+items:
+- name: Title of the topic
+  description: Summary of the topic
+  items:
+  - name: Title of the tutorial
+    items:
+    - name: 'DOI: 10.5281/zenodo....'
+      description: latest
+      items:
+      - info: https://doi.org/10.5281/zenodo....
+        url: https://zenodo.org/api/files/URL/to/the/input/file
+        ext: galaxy-datatype
+        src: url
+```
 
 ## Installing tutorial requirements
 We have created a small bash script to automatically install all of a tutorial’s requirements to an existing Galaxy. It’s located in this repository under: 

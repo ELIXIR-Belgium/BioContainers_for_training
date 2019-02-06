@@ -1,0 +1,31 @@
+---
+api_key: admin
+galaxy_instance: http://localhost:8080
+install_resolver_dependencies: true
+install_tool_dependencies: True
+install_repository_dependencies: True
+tools:
+  - name: fastqc
+    owner: devteam
+    revisions:
+    - ff9530579d1f
+    tool_panel_section_label: Tools from workflows
+    tool_shed_url: https://toolshed.g2.bx.psu.edu
+  - name: unicycler
+    owner: iuc
+    revisions:
+    - e9c1cdb9f9dc
+    tool_panel_section_label: Tools from workflows
+    tool_shed_url: https://toolshed.g2.bx.psu.edu
+  - name: prokka
+    owner: crs4
+    revisions:
+    - a17498c603ec
+    tool_panel_section_label: Tools from workflows
+    tool_shed_url: https://toolshed.g2.bx.psu.edu
+  - name: quast
+    owner: iuc
+    revisions:
+    - 2f581f956e1c
+    tool_panel_section_label: Tools from workflows
+    tool_shed_url: https://toolshed.g2.bx.psu.edu

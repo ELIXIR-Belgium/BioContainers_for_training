@@ -13,7 +13,7 @@ MAINTAINER Galaxy Training Material
 ENV GALAXY_CONFIG_BRAND "GTN: Example"
 
 # copy the tutorials directory for your topic
-ADD topics/assembly/tutorials/ /tutorials/
+ADD topics/Example_topic/tutorials/ /tutorials/
 
 # install everything for tutorials
 ADD bin/docker-install-tutorials.sh /setup-tutorials.sh
