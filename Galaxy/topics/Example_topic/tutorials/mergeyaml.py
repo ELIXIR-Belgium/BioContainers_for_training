@@ -11,11 +11,8 @@ def extend_dict(merged, a):
                 extend_dict(merged[k], v)
             else:
                 merged[k] = v
-    else:
-        if isinstance(merged, list):
-            extend_list(merged, a)
-        elif merged != None:
-            merged += a
+    elif isinstance(merged, list):
+        extend_list(merged, a)
 
 
 def extend_list(merged, a):
