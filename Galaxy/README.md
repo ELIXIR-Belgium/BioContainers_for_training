@@ -13,11 +13,13 @@
 
 ## Format
 
+
+
 ```
 ---
 api_key: admin
 galaxy_instance: http://localhost:8080
-install_tool_dependencies: True
+install_tool_dependencies: False
 install_repository_dependencies: True
 install_resolver_dependencies: True
 
@@ -75,11 +77,13 @@ This files we define in this tutorial will be used to automatically build a Dock
 
 In this tutorial, you will learn how to create a virtualised Galaxy instance, based on Docker, to run your training - either on normal computers or cloud environments.
 
-## Building the Docker image image
+## Building Docker image
 
 To build the docker image, go to root of training repo
 
 ```docker build -t <your_tag> -f topics/<your_topic>/docker/Dockerfile .```
+
+## Running Docker image
 
 To run image:
 

@@ -11,19 +11,22 @@ def extend_dict(merged, a):
                 extend_dict(merged[k], v)
             else:
                 merged[k] = v
-    else:
+    else:    
         if isinstance(merged, list):
             extend_list(merged, a)
-        elif merged != None:
+        else:
             merged += a
 
 
 def extend_list(merged, a):
     missing = []
-    for itemm in merged:
-        for itema in a:
-            if itemm['name'] == itema['name']:
-                extend_dict(itemm, itema)
+    for itema in a:
+        if not isinstance(itema, dict) or itema in missing:
+            continue
+        if 'name' in itema:
+            match = next((i for i in merged if i["name"] == itema["name"]), False)
+            if match:
+                extend_dict(match, itema)
             else:
                 missing += [itema, ]
     merged += missing

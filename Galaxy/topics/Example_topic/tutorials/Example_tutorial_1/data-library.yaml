@@ -11,7 +11,7 @@ items:
   items:
   - name: Example_tutorial_1
     items:
-    - name: 'DOI: '
+    - name: 'DOI: exampledoi'
       description: latest
       items:
       - info:
