@@ -1,0 +1,17 @@
+---
+name: example_topic
+type: use
+title: Title of the topic
+summary: Summary of the topic
+requirements:
+- title: ''
+  type: internal
+  link: /introduction/
+docker_image: ''
+maintainers:
+- maintainers
+references:
+- authors: authors et al
+  title: the title
+  link: link
+  summary: Why this reference is useful
