@@ -1,81 +1,36 @@
-# Best Practices for galaxy tutorial containers
+# Making a new galaxy tutorial
 
-## Requirements 
+1. Determine the topic
+2. Create your workflow on a running Galaxy instance
+3. Create a Zenodo record with the input data
+4. Generate the skeleton of your tutorial
+   - option 1: from a workflow located on a Galaxy
+     ```
+     $ planemo training_init \
+            --topic_name "my-topic" \
+            --tutorial_name "my-new-tutorial" \
+            --tutorial_title "Title of the tutorial" \
+            --galaxy_url "URL to Galaxy instance in which you created the workflow" \
+            --galaxy_api_key "Your API key on the Galaxy instance" \
+            --workflow_id "ID of the workflow on the Galaxy instance" \
+            --zenodo_link "URL to the Zenodo record"
+     ```
+   - option 2: from a local workflow file (`.ga`)
 
-#### Recommended
-* __tools.yaml__: describes the Tool Shed tools used in the tutorial
-* __data-library.yaml__: describes the input datasets
-* __workflows folder__: contains one or more workflows with all steps in the tutorial
+     ```
+     $ planemo training_init \
+            --topic_name "my-topic" \
+            --tutorial_name "my-new-tutorial" \
+            --tutorial_title "Title of the tutorial" \
+            --workflow "path/to/workflow" \
+            --zenodo_link "URL to the Zenodo record"
+     ```
+     You can use the example workflow file located in `topics/contributing/tutorials/create-new-tutorial/workflows/example-workflow.ga` if
+     you do not have a workflow of your own. This is the workflow belonging to the *Galaxy 101* introduction tutorial.
 
-#### Optional
-* __data-manager.yaml__: describes the reference data required by tools
-* __tours folder__: contains one or more yaml files describing interactive tours
+5. Fill the remaining metadata in the `tutorial.md`
+6. Fill the content of the `tutorial.md`
 
-## Format
-
-
-
-```
----
-api_key: admin
-galaxy_instance: http://localhost:8080
-install_tool_dependencies: False
-install_repository_dependencies: True
-install_resolver_dependencies: True
-
-tools:
-- name: tool1
-  owner: owner
-  revisions:
-  - example
-  tool_panel_section_label: "Section1"
-  tool_shed_url: https://toolshed.g2.bx.psu.edu
-- name: tool2
-  owner: owner
-  revisions:
-  - example
-  tool_panel_section_label: "Section2"
-  tool_shed_url: https://toolshed.g2.bx.psu.edu
-```
-
-
-
-
-```
----
-destination:
-  type: library
-  name: GTN - Material
-  description: Galaxy Training Network Material
-  synopsis: Galaxy Training Network Material. See https://training.galaxyproject.org
-items:
-- name: Title of the topic
-  description: Summary of the topic
-  items:
-  - name: Title of the tutorial
-    items:
-    - name: 'DOI: 10.5281/zenodo....'
-      description: latest
-      items:
-      - info: https://doi.org/10.5281/zenodo....
-        url: https://zenodo.org/api/files/URL/to/the/input/file
-        ext: galaxy-datatype
-        src: url
-```
-
-## Installing tutorial requirements
-We have created a small bash script to automatically install all of a tutorial’s requirements to an existing Galaxy. It’s located in this repository under: 
-
-```bin/install_tutorial_requirements.sh```
-
-
-## Building a Galaxy instance specifically for your training
-
-To be able to run the tutorial, we need a Galaxy instance where all of the needed tools and data are available. Thus we need to describe the needed technical infrastructure.
-
-This files we define in this tutorial will be used to automatically build a Docker Galaxy flavour, and also to test if a public Galaxy instance is able to run the tool.
-
-In this tutorial, you will learn how to create a virtualised Galaxy instance, based on Docker, to run your training - either on normal computers or cloud environments.
 
 ## Building Docker image
 
