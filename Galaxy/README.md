@@ -1,9 +1,21 @@
-# Making a new galaxy tutorial
+# Creating a new galaxy tutorial
 
-1. Determine the topic
-2. Create your workflow on a running Galaxy instance
-3. Create a Zenodo record with the input data
-4. Generate the skeleton of your tutorial
+For an in depth view on the specific steps in the creation of a new tutorial please visit:
+
+- [Creating a new tutorial](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial/tutorial.html)
+- [Defining the technical infrastructure](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-technical/tutorial.html)
+- [Creating Interactive Galaxy Tours](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-tours/tutorial.html)
+- [Slides](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-slides/slides.html#1)
+- [Writing content in Markdown](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html)
+
+## Genaral overview
+
+1. __Determine the topic__\
+   Please visit [Including a new topic](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-topic/tutorial.html) when the tutorial does not fit within one of the existing topics.
+2. __Create your workflow on a running Galaxy instance__\
+   The tutorial is build around a workflow
+3. __Create a Zenodo record with the input data__
+4. __Generate the skeleton of your tutorial__
    - option 1: from a workflow located on a Galaxy
      ```
      $ planemo training_init \
@@ -28,8 +40,19 @@
      You can use the example workflow file located in `topics/contributing/tutorials/create-new-tutorial/workflows/example-workflow.ga` if
      you do not have a workflow of your own. This is the workflow belonging to the *Galaxy 101* introduction tutorial.
 
-5. Fill the remaining metadata in the `tutorial.md`
-6. Fill the content of the `tutorial.md`
+5. __Fill the remaining metadata and the content of the `tutorial.md`__\
+   The most important file is the tutorial.md where the content of the tutorial is. The other files are there to support the tutorial and make it robust and usable across many environments.
+6. __Creating the `data-library.yaml` file__
+   - Copy the Zenodo link
+   - Generate the data-library.yaml file and update the tutorial metadata with the link:
+     ```
+     $ planemo training_fill_data_library \
+            --topic_name "my-topic" \
+            --tutorial_name "my-new-tutorial" \
+            --zenodo_link "URL to the Zenodo record"
+     ```
+   - Check that the data-library.yaml has been generated (or updated)
+   - Check tha the Zenodo link is in the metadata at the top of the tutorial.md
 
 
 ## Building Docker image
