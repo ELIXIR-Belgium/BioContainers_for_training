@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: Title of the second example tutorial
-zenodo_link: ''
+zenodo_link: https://doi.org/10.5281/zenodo.2573596
 questions:
 - Which biological questions are addressed by the tutorial?
 - Which bioinformatics techniques are important to know for this type of data?

@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: Title of the example tutorial
-zenodo_link: ''
+zenodo_link: https://doi.org/10.5281/zenodo.2573596
 questions:
 - Which biological questions are addressed by the tutorial?
 - Which bioinformatics techniques are important to know for this type of data?
@@ -13,7 +13,7 @@ objectives:
 - They are single sentences describing what a learner should be able to do once they
   have completed the tutorial
 - You can use Bloom's Taxonomy to write effective learning objectives
-time_estimation: ''
+time_estimation: 3H
 key_points:
 - The take-home messages
 - They will appear at the end of the tutorial
@@ -109,204 +109,13 @@ The idea is to keep the theory description before quite simple to focus more on 
 A big step can have several subsections or sub steps:
 
 
-## Sub-step with **Join**
+## Sub-step with **My Tool**
 
 > ### {% icon hands_on %} Hands-on: Task description
 >
-> 1. **Join** {% icon tool %} with the following parameters:
->    - {% icon param-file %} *"Join"*: `output` (Input dataset)
->    - {% icon param-file %} *"with"*: `output` (Input dataset)
->
->    ***TODO***: *Check parameter descriptions*
->
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > ### {% icon comment %} Comment
->    >
->    > A comment about the tool or something else. This box can also be in the main text
->    {: .comment}
->
-{: .hands_on}
-
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
-
-> ### {% icon question %} Questions
->
-> 1. Question1?
-> 2. Question2?
->
-> > ### {% icon solution %} Solution
-> >
-> > 1. Answer for question1
-> > 2. Answer for question2
-> >
-> {: .solution}
->
-{: .question}
-
-## Sub-step with **Group**
-
-> ### {% icon hands_on %} Hands-on: Task description
->
-> 1. **Group** {% icon tool %} with the following parameters:
->    - {% icon param-file %} *"Select data"*: `output` (output of **Join** {% icon tool %})
->    - *"Group by column"*: `c4`
->    - *"Ignore lines beginning with these characters"*: ``
->    - In *"Operation"*:
->        - {% icon param-repeat %} *"Insert Operation"*
->            - *"Type"*: `Count`
->            - *"On column"*: `c1`
->
->    ***TODO***: *Check parameter descriptions*
->
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > ### {% icon comment %} Comment
->    >
->    > A comment about the tool or something else. This box can also be in the main text
->    {: .comment}
->
-{: .hands_on}
-
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
-
-> ### {% icon question %} Questions
->
-> 1. Question1?
-> 2. Question2?
->
-> > ### {% icon solution %} Solution
-> >
-> > 1. Answer for question1
-> > 2. Answer for question2
-> >
-> {: .solution}
->
-{: .question}
-
-## Sub-step with **Group**
-
-> ### {% icon hands_on %} Hands-on: Task description
->
-> 1. **Group** {% icon tool %} with the following parameters:
->    - {% icon param-file %} *"Select data"*: `output` (output of **Join** {% icon tool %})
->    - *"Group by column"*: `c4`
->    - *"Ignore lines beginning with these characters"*: ``
->    - In *"Operation"*:
->        - {% icon param-repeat %} *"Insert Operation"*
->            - *"Type"*: `Count`
->            - *"On column"*: `c4`
->
->    ***TODO***: *Check parameter descriptions*
->
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > ### {% icon comment %} Comment
->    >
->    > A comment about the tool or something else. This box can also be in the main text
->    {: .comment}
->
-{: .hands_on}
-
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
-
-> ### {% icon question %} Questions
->
-> 1. Question1?
-> 2. Question2?
->
-> > ### {% icon solution %} Solution
-> >
-> > 1. Answer for question1
-> > 2. Answer for question2
-> >
-> {: .solution}
->
-{: .question}
-
-## Sub-step with **Sort**
-
-> ### {% icon hands_on %} Hands-on: Task description
->
-> 1. **Sort** {% icon tool %} with the following parameters:
->    - {% icon param-file %} *"Sort Query"*: `out_file1` (output of **Group** {% icon tool %})
->    - In *"Column selections"*:
->        - {% icon param-repeat %} *"Insert Column selections"*
->            - *"on column"*: `c2`
->            - *"in"*: `Descending order`
->            - *"Flavor"*: `General numeric sort ( scientific notation -g)`
->
->    ***TODO***: *Check parameter descriptions*
->
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > ### {% icon comment %} Comment
->    >
->    > A comment about the tool or something else. This box can also be in the main text
->    {: .comment}
->
-{: .hands_on}
-
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
-
-> ### {% icon question %} Questions
->
-> 1. Question1?
-> 2. Question2?
->
-> > ### {% icon solution %} Solution
-> >
-> > 1. Answer for question1
-> > 2. Answer for question2
-> >
-> {: .solution}
->
-{: .question}
-
-## Sub-step with **Select first**
-
-> ### {% icon hands_on %} Hands-on: Task description
->
-> 1. **Select first** {% icon tool %} with the following parameters:
->    - *"Select first"*: `5`
->    - {% icon param-file %} *"from"*: `outfile` (output of **Sort** {% icon tool %})
->
->    ***TODO***: *Check parameter descriptions*
->
->    ***TODO***: *Consider adding a comment or tip box*
->
->    > ### {% icon comment %} Comment
->    >
->    > A comment about the tool or something else. This box can also be in the main text
->    {: .comment}
->
-{: .hands_on}
-
-***TODO***: *Consider adding a question to test the learners understanding of the previous exercise*
-
-> ### {% icon question %} Questions
->
-> 1. Question1?
-> 2. Question2?
->
-> > ### {% icon solution %} Solution
-> >
-> > 1. Answer for question1
-> > 2. Answer for question2
-> >
-> {: .solution}
->
-{: .question}
-
-## Sub-step with **Compare two Datasets**
-
-> ### {% icon hands_on %} Hands-on: Task description
->
-> 1. **Compare two Datasets** {% icon tool %} with the following parameters:
->    - {% icon param-file %} *"Compare"*: `output` (Input dataset)
->    - *"Using column"*: `c4`
->    - {% icon param-file %} *"against"*: `out_file1` (output of **Select first** {% icon tool %})
->    - *"and column"*: `c1`
+> 1. **My Tool** {% icon tool %} with the following parameters:
+>    - {% icon param-file %} *"Input file"*: File
+>    - *"Parameter"*: `a value`
 >
 >    ***TODO***: *Check parameter descriptions*
 >
