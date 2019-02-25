@@ -8,22 +8,22 @@ For an in depth view on the specific steps in the creation of a new tutorial ple
 - [Slides](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-slides/slides.html#1)
 - [Writing content in Markdown](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html)
 
-## 1. Determine the topic
+### 1. Determine the topic
 Please visit [Including a new topic](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-topic/tutorial.html) when the tutorial does not fit within one of the existing topics.
 
 
-## 2. Create your workflow on a running Galaxy instance
+### 2. Create your workflow on a running Galaxy instance
 
 If you need to install tools from the [toolshed](https://toolshed.g2.bx.psu.edu/). The tutorial is built around a workflow
 
-## 3. Create a Zenodo record with the input data
+### 3. Create a Zenodo record with the input data
 
 Reserve a Digital Object Identifier for your upload. 
 
 
-## 4. Genarate the file structure using planemo
+### 4. Genarate the file structure using planemo
 
-### The file structure
+#### The file structure
 
 ```
 ├── README.md
@@ -45,7 +45,7 @@ Reserve a Digital Object Identifier for your upload.
 ```
 
 
-### Install planemo
+#### Install planemo
 
 `Planemo` can be easaly installed using `pip`.  
 
@@ -53,7 +53,7 @@ Reserve a Digital Object Identifier for your upload.
 pip install planemo
 ```
 
-### Generate the skeleton of your tutorial
+#### Generate the skeleton of your tutorial
 - Option 1: from a workflow located on a Galaxy instance
      ```
      $ planemo training_init \
@@ -78,7 +78,7 @@ pip install planemo
 
 Fill the remaining metadata and the content of the `tutorial.md`
 
-### Creating the `data-library.yaml` file
+#### Creating the `data-library.yaml` file
 
    - Generate the data-library.yaml file and update the tutorial metadata with the link:
      ```
@@ -90,9 +90,9 @@ Fill the remaining metadata and the content of the `tutorial.md`
    - Check that the data-library.yaml has been generated (or updated)
    - Check tha the Zenodo link is in the metadata at the top of the tutorial.md
 
-## Using Docker to built a Galaxy training container
+### Using Docker to built a Galaxy training container
 
-### Built the Docker image
+#### Built the Docker image
 
 Open a terminal, go to the root of the galaxy repository (in this example `./Galaxy`) and use following command:
 
@@ -102,7 +102,7 @@ docker build -t <your_tag> -f topics/<your_topic>/docker/Dockerfile .
 
 Where `<your_tag>` is the name of the image and `<your_topic>` is the name of the topic.
 
-### Running the Docker container
+#### Running the Docker container
 
 To execute the image, use following command:
 
@@ -110,6 +110,6 @@ To execute the image, use following command:
 docker run -p "8080:80" -t <your_tag>
 ```
 
-### Using the running Galaxy container
+#### Using the running Galaxy container
 
 Open a webbrowser and go to `http://localhost:8080`.
