@@ -98,10 +98,10 @@ The `data-library.yaml` file will be used to load the published dataset from Zen
             --tutorial_name "my-new-tutorial" \
             --zenodo_link "URL to the Zenodo record"
      ```
-   - Check that the data-library.yaml has been generated (or updated)
+   - Check that the data-library.yaml has been generated
    - Check tha the Zenodo link is in the metadata at the top of the tutorial.md
 
-The `data-library.yaml` will have the following:
+The `data-library.yaml` will have the following format:
 ```yaml
 ---
 destination:
