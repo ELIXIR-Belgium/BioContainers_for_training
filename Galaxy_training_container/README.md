@@ -48,6 +48,7 @@ Each training is related to a topic. All training materials (slides, tutorials, 
 │   │   │   ├── tour.yaml (optional)
 ```
 
+In the `./topics` folder in this repository, a working example topic is added as guideline. 
 
 #### Install planemo
 
@@ -62,7 +63,7 @@ For more information about planemo visit https://planemo.readthedocs.io
 
 #### Generate the skeleton of your tutorial
 
-Open a terminal, go to the root of the training repository (in this example `./Galaxy`) and use following command:
+Open a terminal, go to the root of the training repository (in this example `./Galaxy_training_container`) and use following command:
 - __Option 1__: from a workflow located on a Galaxy instance
      ```shell
      $ planemo training_init \
@@ -132,7 +133,7 @@ A Galaxy Interactive Tour is a way to go through an entire analysis, step by ste
 
 #### Built the Docker image
 
-Open a terminal, go to the root of the training repository (in this example `./Galaxy`) and use following command:
+Open a terminal, go to the root of the training repository (in this example `./Galaxy_training_container`) and use following command:
 
 ```
 docker build -t <your_tag> -f topics/<your_topic>/docker/Dockerfile .
