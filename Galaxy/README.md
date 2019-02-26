@@ -1,4 +1,4 @@
-# Creating a new galaxy tutorial
+# Creating a new galaxy training container
 
 For an in depth view on the specific steps in the creation of a new tutorial please visit:
 
@@ -8,11 +8,11 @@ For an in depth view on the specific steps in the creation of a new tutorial ple
 - [Slides](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-slides/slides.html#1)
 - [Writing content in Markdown](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-content/tutorial.html)
 
-## From idea to a running galaxy container
+## From idea to a running galaxy container for training
 
 ### 1. Create your workflow on a running Galaxy instance
 
-When the Docker image is being built, the nessevary tools for the tutorial will be installed from one or multiple `.ga` files in the workflow folder. This  means that tools which are not covered in a workflow, will not be installed. At the same time a container will always contain the correct version.  Learn more about how you can extract a Workflow from a history [here](https://galaxyproject.org/learn/advanced-workflow/extract/). The available tools for galaxy can be found in the [toolshed](https://toolshed.g2.bx.psu.edu/.
+When the Docker image is being built, the nessevary tools for the tutorial will be installed from one or multiple `.ga` files in the workflow folder. This  means that tools which are not covered in a workflow, will not be installed. This also means that a container will always contain the correct version of a tool including its dependencies.  Learn more about how you can extract a workflow from a history [here](https://galaxyproject.org/learn/advanced-workflow/extract/). The available tools for galaxy can be found in the [toolshed](https://toolshed.g2.bx.psu.edu/.
 The workflow will be used ase base for building the tutorial. 
 
 ### 2. Create a Zenodo record with the input data
@@ -23,7 +23,7 @@ When the dataset is published, zenodo will generate a Digital Object Identifier 
 
 ### 3. Determine the topic
 
-Each training material is related to a topic. All training materials (slides, tutorials, …) related to a topic are found in a dedicated directory (e.g. transcriptomics directory contains the material related to exome sequencing analysis). Please visit [Including a new topic](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-topic/tutorial.html) when the tutorial does not fit within one of the existing topics.
+Each training is related to a topic. All training materials (slides, tutorials, …) related to a topic are found in a dedicated directory (e.g. transcriptomics directory contains the material related to exome sequencing analysis). Please visit [Including a new topic](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-topic/tutorial.html) when the tutorial does not fit within one of the existing topics.
 
 ### 4. Genarate the file structure using planemo
 
@@ -63,7 +63,7 @@ For more information about planemo visit https://planemo.readthedocs.io
 #### Generate the skeleton of your tutorial
 
 Open a terminal, go to the root of the training repository (in this example `./Galaxy`) and use following command:
-- Option 1: from a workflow located on a Galaxy instance
+- __Option 1__: from a workflow located on a Galaxy instance
      ```shell
      $ planemo training_init \
             --topic_name "my-topic" \
@@ -74,7 +74,7 @@ Open a terminal, go to the root of the training repository (in this example `./G
             --workflow_id "ID of the workflow on the Galaxy instance" \
             --zenodo_link "URL to the Zenodo record"
      ```
-- Option 2: from a local workflow file (`.ga`) (generated from a history or built in the workflow editor). 
+- __Option 2__: from a local workflow file (`.ga`) (generated from a history or built in the workflow editor). 
 
      ```shell
      $ planemo training_init \
@@ -124,8 +124,11 @@ items:
         src: url
 ```
 
+### 6. Creating a Galaxy Interactive Tour (optional)
+A Galaxy Interactive Tour is a way to go through an entire analysis, step by step inside Galaxy in an interactive and explorative way.  To learn more about creating a Galaxy tour you can visit the [dedicated tour training](https://galaxyproject.github.io/training-material/topics/contributing/tutorials/create-new-tutorial-tours/tutorial.html).
 
-### 6. Using Docker to built a Galaxy training container
+
+### 7. Using Docker to built a Galaxy training container
 
 #### Built the Docker image
 
@@ -137,8 +140,9 @@ docker build -t <your_tag> -f topics/<your_topic>/docker/Dockerfile .
 
 > Where `<your_tag>` is the name of the image and `<your_topic>` is the name of the topic.
 
-This command will use the `Dockerfile` as recipe to built the corresponding Docker image.
-The `Dockerfile` looks stays the same
+This command will use the `Dockerfile` automatically generated by `planemo training_init` comman as recipe to built the corresponding Docker image.
+
+The `Dockerfile` looks like this:
 
 ```Dockerfile
 FROM bgruening/galaxy-stable:latest
@@ -146,10 +150,6 @@ FROM bgruening/galaxy-stable:latest
 MAINTAINER Galaxy Training Material
 
 ENV GALAXY_CONFIG_BRAND "GTN: Title of the topic"
-
-# prerequisites
-RUN pip install ephemeris -U
-ADD bin/galaxy-sleep.py /galaxy-sleep.py
 
 # copy the tutorials directory for your topic
 ADD topics/example_topic/tutorials/ /tutorials/
@@ -160,7 +160,7 @@ ADD bin/mergeyaml.py /mergeyaml.py
 RUN /setup-tutorials.sh
 ```
 
-
+Where scripts in `./bin` are being used to install the tours, tools, workflows and data-libraries in the latest galaxy docker instance.
 
 
 #### Running the Docker container
@@ -170,6 +170,8 @@ To execute the image, use following command:
 ```
 docker run -p "8080:80" -t <your_tag>
 ```
+
+> Change the first port if you want to run multiple containers at once.
 
 #### Using the running Galaxy container
 
