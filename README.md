@@ -1,6 +1,6 @@
 # BioContainers for training
 Here we present a base specification and guidelines in using bioinformatics containers for training purposes.\
-This repository includes examples
+This repository includes examples.
 
 ## Containers
 Containers enable a common and controllable environment for running software and deals with some of the current problems during software development and distribution including dependencies and multiplatform usage.
