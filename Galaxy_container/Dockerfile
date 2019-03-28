@@ -13,15 +13,10 @@ MAINTAINER Galaxy Training Material
 
 ENV GALAXY_CONFIG_BRAND "Galaxy Container"
 
-# prerequisites
-RUN pip install ephemeris -U
 ADD bin/galaxy-sleep.py /galaxy-sleep.py
-
-# copy the tutorials directory for your topic
+ADD bin/docker-install-workflow.sh /setup-workflow.sh
 ADD /data-library.yaml /workflowDir/data-library.yaml
 ADD /workflows /workflowDir
 
-# install everything for tutorials
-ADD bin/docker-install-tutorials.sh /setup-tutorials.sh
-ADD bin/mergeyaml.py /mergeyaml.py
-RUN /setup-tutorials.sh
+RUN pip install ephemeris -U
+RUN /setup-workflow.sh
