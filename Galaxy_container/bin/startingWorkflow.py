@@ -18,8 +18,7 @@ gi.histories.create_history(name=history_name)
 gi.libraries.create_library(name='Local data')
 gi.libraries.upload_file_from_server('f2db41e1fa331b3e', './inputData')
 
-toolClient = ToolClient(gi)
-toolClient = ToolClient(gi)
+
 workflowsClient = WorkflowClient(gi)
 
 histories_out = gi.histories.get_histories(name=history_name)
@@ -27,8 +26,9 @@ history_id = histories_out[0]['id']
 dataset_1 = gi.histories.show_matching_datasets(history_id,name_filter=dataset_name_1)
 
 workflows = workflowsClient.get_workflows(name = workflow_name)
-workflow = workflows[0]
 print(workflows[0])
+workflow = workflows[0]
+gi.workflows.show_workflow(workflow['id'])
 datamap = {}
 datamap['0'] = { 'src':'hda', 'id':dataset_1[0]['id'] }
 w= workflowsClient.invoke_workflow(workflow['id'], datamap, history_id=history_id) 
