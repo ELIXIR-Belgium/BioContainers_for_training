@@ -1,10 +1,12 @@
+#!/bin/bash
+
 # install everything for workflow to work inside conainer
 
 set -e
 galaxy_instance="http://localhost:8080"
 
 # launch the instance
-echo " - Starting Galaxy.. \n"
+echo "Starting Galaxy..."
 
 export GALAXY_CONFIG_TOOL_PATH=/galaxy-central/tools/
 startup_lite
@@ -28,7 +30,7 @@ done
 echo " - Installing workflows"
     workflow-install --publish_workflows --workflow_path /workflowDir/ -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
 
-echo "Finished installation of workflow\n"
+echo "Finished installation of workflow"
 
 
 # check if data-library_all.yaml is not empty

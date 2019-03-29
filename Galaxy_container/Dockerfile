@@ -12,11 +12,16 @@ FROM bgruening/galaxy-stable:latest
 MAINTAINER Galaxy Training Material
 
 ENV GALAXY_CONFIG_BRAND "Galaxy Container"
+ENV GALAXY_CONFIG_LIBRARY_IMPORT_DIR "/mountDir"
 
 ADD bin/galaxy-sleep.py /galaxy-sleep.py
+ADD bin/startingWorkflow.py /startingWorkflow.py
 ADD bin/docker-install-workflow.sh /setup-workflow.sh
-ADD /data-library.yaml /workflowDir/data-library.yaml
+# ADD /data-library.yaml /workflowDir/data-library.yaml
 ADD /workflows /workflowDir
+ADD bin/starter-service.sh /starter-service.sh
 
 RUN pip install ephemeris -U
 RUN /setup-workflow.sh
+
+ENTRYPOINT ["/starter-service.sh"]
