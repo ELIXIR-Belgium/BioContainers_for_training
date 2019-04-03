@@ -7,8 +7,7 @@
 # to run image:
 #    docker run -p "8080:80" -t example_topic
 
-FROM bgruening/galaxy-stable
-
+FROM bgruening/galaxy-stable:latest
 MAINTAINER Galaxy Training Material
 
 ENV GALAXY_CONFIG_BRAND "Galaxy Container"
