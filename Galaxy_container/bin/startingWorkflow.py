@@ -2,8 +2,7 @@
 from bioblend.galaxy import GalaxyInstance
 import sys
 import time
-
-print(sys.argv[1])
+import os
 
 #- Parameters
 GALAXY_URL = 'http://localhost:80'
