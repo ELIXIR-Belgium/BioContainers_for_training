@@ -1,2 +1,0 @@
-2019-03-21 11:45:14	1.1s	romantic_linnaeus	OK	a9012339ce857d6ec7a078281813d8a93645a3e7	5f796abc-e222-43b2-bf72-a866b6fbb3bd	nextflow run hello
-2019-03-21 11:51:05	27.8s	compassionate_heisenberg	OK	bfcee3841f88ee61e2cf6d264e0ef02774b9d1c1	9e8f3ffa-2564-4251-ba03-d183afc16829	nextflow run rnatoy -with-docker

@@ -18,7 +18,8 @@ Supported platforms:
 
 Topic | Description
 ------------ | ------------- 
-[Galaxy](https://usegalaxy.org/) | Galaxy is an open source, web-based platform for data intensive biomedical research
+[Galaxy](https://usegalaxy.org/) | Galaxy is an open source, web-based platform for data intensive biomedical research.
+[Galaxy Training](https://galaxyproject.github.io/training-material/) | Tutorials developed and maintained by the worldwide Galaxy community.
 [Nextflow](https://www.nextflow.io/) | Nextflow enables scalable and reproducible scientific workflows using software containers
 
 Visit the corresponding sub directories in this repository to find out more on how to built and use these containers.

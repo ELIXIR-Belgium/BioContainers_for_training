@@ -9,7 +9,7 @@ galaxy_instance="http://localhost:8080"
 echo "Starting Galaxy..."
 
 export GALAXY_CONFIG_TOOL_PATH=/galaxy-central/tools/
-startup_lite
+startup &
 
 # wait until galaxy has started
 galaxy-wait -g $galaxy_instance

@@ -7,21 +7,23 @@
 # to run image:
 #    docker run -p "8080:80" -t example_topic
 
-FROM bgruening/galaxy-stable:latest
+FROM bgruening/galaxy-stable
 
 MAINTAINER Galaxy Training Material
 
 ENV GALAXY_CONFIG_BRAND "Galaxy Container"
 ENV GALAXY_CONFIG_LIBRARY_IMPORT_DIR "/mountDir"
 
+
 ADD bin/galaxy-sleep.py /galaxy-sleep.py
 ADD bin/startingWorkflow.py /startingWorkflow.py
 ADD bin/docker-install-workflow.sh /setup-workflow.sh
-# ADD /data-library.yaml /workflowDir/data-library.yaml
-ADD /workflows /workflowDir
 ADD bin/starter-service.sh /starter-service.sh
+ADD /dataLibrary /workflowDir/
+ADD /workflow /workflowDir
 
 RUN pip install ephemeris -U
 RUN /setup-workflow.sh
 
 ENTRYPOINT ["/starter-service.sh"]
+CMD ["local"]

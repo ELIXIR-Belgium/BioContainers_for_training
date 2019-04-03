@@ -1,10 +1,12 @@
 #!/bin/bash
+set -e
 
 # launch the instance in deamon mode
-echo "Starting Galaxy..."
+echo "Starting Galaxy"
 startup &
 
 galaxy_instance="http://localhost:8080"
 galaxy-wait -g $galaxy_instance
 
-python "/startingWorkflow.py"
+
+python "/startingWorkflow.py" $1 
