@@ -69,8 +69,13 @@ time.sleep(2)
 output_histories = gi.histories.get_histories(name=output_history_name)
 output_history_id = output_histories[0]['id']
 print('Output history ID: ' + output_history_id)
+
 while gi.histories.get_status(output_history_id)['percent_complete'] != 100:
     time.sleep(1)
+    if gi.histories.get_status(output_history_id)['state_details']['error'] != 0:
+        print('One of the steps in the workflow is giving an ERROR')
+        break
+
 print('Workflow Done.')
 
 # - Export output files
