@@ -1,0 +1,8 @@
+{
+    "inputs": [
+        {
+            "step":"0",
+            "filename":"UCSC_input.bed"
+        }
+    ]
+}

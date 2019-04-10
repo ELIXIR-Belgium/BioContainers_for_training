@@ -3,13 +3,14 @@ from bioblend.galaxy import GalaxyInstance
 import sys
 import time
 import os
-
+import json
+ 
 #- Parameters
 GALAXY_URL = 'http://localhost:80'
 library_name = 'Local data'
 history_name = 'Hystory'
 output_history_name = 'Output hystory'
-dataset_namings = ['UCSC_input.bed']
+datamapping_file = '/mountDir/dataMapping.json'
 
 # - Create Galaxy Instance Object
 gi = GalaxyInstance(
@@ -54,12 +55,14 @@ print('Inputs workflow:' + str(wf['inputs']))
 
 
 # - Determining input data
+with open(datamapping_file, 'r') as f:
+    dataset_namings = json.load(f)
 datamap = dict()
-for i, dataset_name in enumerate(dataset_namings):
+for inputname in dataset_namings['inputs']:
     dataset = gi.histories.show_matching_datasets(
-        history_id, name_filter=dataset_name)
-    print('Input dataset {}: '.format(str(i)) + dataset[0]['name'])
-    datamap[str(i)] = {'src': 'hda', 'id': dataset[0]['id']}
+        history_id, name_filter=inputname['filename'])
+    print('Input data step {}: '.format(inputname['step']) + dataset[0]['name'])
+    datamap[inputname['step']] = {'src': 'hda', 'id': dataset[0]['id']}
 
 # - Running workflow
 gi.workflows.invoke_workflow(

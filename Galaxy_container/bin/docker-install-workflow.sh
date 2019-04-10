@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# install everything for workflow to work inside conainer
+# install everything for workflow to work inside container
 
 set -e
 galaxy_instance="http://localhost:8080"
