@@ -4,12 +4,13 @@ import sys
 import time
 import os
 import json
- 
-#- Parameters
+
+# - Parameters
 GALAXY_URL = 'http://localhost:80'
 library_name = 'Local data'
 history_name = 'Hystory'
 output_history_name = 'Output hystory'
+outputDir = '/mountDir/outputData'
 datamapping_file = '/mountDir/dataMapping.json'
 
 # - Create Galaxy Instance Object
@@ -61,7 +62,8 @@ datamap = dict()
 for inputname in dataset_namings['inputs']:
     dataset = gi.histories.show_matching_datasets(
         history_id, name_filter=inputname['filename'])
-    print('Input data step {}: '.format(inputname['step']) + dataset[0]['name'])
+    print('Input data step {}: '.format(
+        inputname['step']) + dataset[0]['name'])
     datamap[inputname['step']] = {'src': 'hda', 'id': dataset[0]['id']}
 
 # - Running workflow
@@ -88,4 +90,4 @@ for of in output_files:
     if of['history_content_type'] == 'dataset':
         print('Exporting ' + of['name'])
         gi.datasets.download_dataset(
-            of['id'], file_path='/mountDir/outputData')
+            of['id'], file_path=outputDir)
