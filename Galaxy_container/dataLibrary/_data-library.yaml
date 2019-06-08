@@ -1,0 +1,14 @@
+---
+destination:
+  type: library
+  name: Downloaded data
+  description: Data library built from URLs specified in de data-library.yaml file
+  synopsis: 
+items:
+- name: 'DOI: 10.5281/zenodo.61771'
+  description: latest
+  items:
+  - url: https://zenodo.org/api/files/8277b9f8-3c39-412a-8a1f-76bc810630e3/GSM461176_untreat_single_subset.fastq
+    src: url
+    ext: fastqsanger
+    info: https://doi.org/10.5281/zenodo.61771
