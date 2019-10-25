@@ -23,7 +23,7 @@ histories = gi.histories.get_histories(name=history_name)
 history_id = histories[0]['id']
 print('History ID: ' + history_id)
 
-# - Create Libary
+# - Create Library
 # Default data is loaded from mounted directory
 if sys.argv[1] == 'local':
     gi.libraries.create_library(name=library_name)

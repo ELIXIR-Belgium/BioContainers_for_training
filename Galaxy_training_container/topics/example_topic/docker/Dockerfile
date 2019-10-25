@@ -7,15 +7,11 @@
 # to run image:
 #    docker run -p "8080:80" -t example_topic
 
-FROM bgruening/galaxy-stable:latest
+FROM bgruening/galaxy-stable:19.01
 
 MAINTAINER Galaxy Training Material
 
 ENV GALAXY_CONFIG_BRAND "GTN: Title of the topic"
-
-# prerequisites
-RUN pip install ephemeris -U
-ADD bin/galaxy-sleep.py /galaxy-sleep.py
 
 # copy the tutorials directory for your topic
 ADD topics/example_topic/tutorials/ /tutorials/
