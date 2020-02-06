@@ -1,0 +1,19 @@
+---
+destination:
+  type: library
+  name: GTN - Material
+  description: Galaxy Training Network Material
+  synopsis: Galaxy Training Network Material. See https://training.galaxyproject.org
+items:
+- name: Title of the topic
+  description: Summary of the topic
+  items:
+  - name: Title of the example tutorial
+    items:
+    - name: 'DOI: 10.5281/zenodo.2573596'
+      description: latest
+      items:
+      - url: https://zenodo.org/api/files/e4200836-cde5-4c6a-8b45-dab0a76b4eee/ath.con
+        src: url
+        ext: fasta
+        info: https://doi.org/10.5281/zenodo.2573596
