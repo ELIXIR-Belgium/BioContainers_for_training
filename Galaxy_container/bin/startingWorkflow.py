@@ -8,8 +8,8 @@ import json
 # - Parameters
 GALAXY_URL = 'http://localhost:80'
 library_name = 'Local data'
-history_name = 'Hystory'
-output_history_name = 'Output hystory'
+history_name = 'History'
+output_history_name = 'Output history'
 outputDir = '/mountDir/outputData'
 datamapping_file = '/mountDir/dataMapping.json'
 
@@ -23,8 +23,8 @@ histories = gi.histories.get_histories(name=history_name)
 history_id = histories[0]['id']
 print('History ID: ' + history_id)
 
-# - Create Libary
-# Default data is lodad from mounted directory
+# - Create Library
+# Default data is loaded from mounted directory
 if sys.argv[1] == 'local':
     gi.libraries.create_library(name=library_name)
     libraries = gi.libraries.get_libraries(name=library_name)
