@@ -1,6 +1,5 @@
+
 # Running Nextflow with only Docker as dependency 
-
-
 
 
 ```

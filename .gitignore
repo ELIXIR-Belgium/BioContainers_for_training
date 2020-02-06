@@ -1,3 +1,6 @@
 .vscode
-Nextflow_training_container/results
 Galaxy_container/mountDir/outputData
+Nextflow_container/nextflow_example/work
+Nextflow_container/nextflow_example/results
+Nextflow_container/nextflow_example/.nextflow
+Nextflow_container/nextflow_example/.nextflow*
