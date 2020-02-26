@@ -2,7 +2,9 @@
 # Running Nextflow with only Docker as dependency 
 
 
-```
-docker run -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:$PWD -w $PWD --user 1018 nextflow/nextflow bash nextflow main.nf -with-docker
-```
+Most simple way of running the 
 
+
+```
+docker run -v /var/run/docker.sock:/var/run/docker.sock -u $(id -u):$(cut -d: -f3 < <(getent group docker)) -v $PWD:$PWD -w $PWD nextflow/nextflow nextflow run main.nf -with-docker
+```
