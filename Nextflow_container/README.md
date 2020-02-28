@@ -2,7 +2,10 @@
 # Running Nextflow with only Docker as dependency 
 
 
-Most simple way of running the 
+Nextflow/Nextflow container
+data and nextflow script mounted in container
+user taken from system 
+makes use of sibling containers by mounting 
 
 
 ```
