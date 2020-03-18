@@ -11,7 +11,6 @@ FROM bgruening/galaxy-stable:19.01
 MAINTAINER ELIXIR Belgium
 
 ENV GALAXY_CONFIG_BRAND "Covid-19"
-ENV GALAXY_CONFIG_LIBRARY_IMPORT_DIR "/mountDir"
 
 
 ADD bin/docker-install-workflow.sh /setup-workflow.sh
