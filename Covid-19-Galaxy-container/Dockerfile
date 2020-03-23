@@ -15,7 +15,8 @@ ENV GALAXY_CONFIG_BRAND "Covid-19"
 
 ADD bin/docker-install-workflow.sh /setup-workflow.sh
 ADD bin/starter-service.sh /starter-service.sh
-ADD /dataLibrary /workflowDir/
+ADD /data /data/
+ADD tools.yaml tools.yaml 
 ADD /workflow /workflowDir
 
 RUN /setup-workflow.sh
