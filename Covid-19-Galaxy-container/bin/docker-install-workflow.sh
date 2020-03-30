@@ -39,15 +39,15 @@ echo " - Installing workflows"
 
 echo "Finished installation of workflow"
 
-echo "Installing extra tools" 
-n=0
-until [ $n -ge 3 ]
-do
-    shed-tools install -t tools.yaml -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD && break
-    n=$[$n+1]
-    sleep 5
-    echo " - Retrying shed-tools install "
-done        
+# echo "Installing extra tools" 
+# n=0
+# until [ $n -ge 3 ]
+# do
+#     shed-tools install -t tools.yaml -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD && break
+#     n=$[$n+1]
+#     sleep 5
+#     echo " - Retrying shed-tools install "
+# done        
 
 echo "Checking for data libraries"
 file="/data/data-library.yaml"
@@ -64,11 +64,11 @@ else
     echo "No data libraries to install"
 fi
 
-echo "Checking for data managers"
-if [ -f "/data/data-manager.yaml" ]
-then
-   echo " - Installing reference data"
-   run-data-managers --config "/data/data-manager.yaml" -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
-else
-   echo " - No reference data to install"
-fi
+# echo "Checking for data managers"
+# if [ -f "/data/data-manager.yaml" ]
+# then
+#    echo " - Installing reference data"
+#    run-data-managers --config "/data/data-manager.yaml" -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
+# else
+#    echo " - No reference data to install"
+# fi
