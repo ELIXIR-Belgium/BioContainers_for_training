@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true",
     "annotation": "",
     "format-version": "0.1",
-    "name": "4 - SE Variation",
+    "name": "Genomics [4] SE Variation",
     "steps": {
         "0": {
             "annotation": "",
@@ -741,7 +741,8 @@
         }
     },
     "tags": [
-        "covid-19"
+        "covid-19",
+        "genomics"
     ],
     "uuid": "fafe0715-25e5-4569-9e29-711192d54bda",
     "version": 4

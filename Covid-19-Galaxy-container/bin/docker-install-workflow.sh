@@ -19,7 +19,7 @@ su - $GALAXY_USER
 
 # install workflow
 echo " - Extracting tools from workflows"
-for w in /workflowDir/*.ga
+for w in `ls /workflowDir/*.ga | sort -r`
 do
     echo $w
     workflow-to-tools -w $w -o /workflowDir/wftools.yaml -l "Tools from workflows"
@@ -32,22 +32,20 @@ do
         sleep 5
         echo " - Retrying shed-tools install "
     done    
+    echo " - Installing workflow"
+    workflow-install --publish_workflows --workflow_path $w -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
     
 done
-echo " - Installing workflows"
-    workflow-install --publish_workflows --workflow_path /workflowDir/ -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
 
-echo "Finished installation of workflow"
-
-# echo "Installing extra tools" 
-# n=0
-# until [ $n -ge 3 ]
-# do
-#     shed-tools install -t tools.yaml -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD && break
-#     n=$[$n+1]
-#     sleep 5
-#     echo " - Retrying shed-tools install "
-# done        
+echo "Installing extra tools" 
+n=0
+until [ $n -ge 3 ]
+do
+    shed-tools install -t tools.yaml -g $galaxy_instance -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD && break
+    n=$[$n+1]
+    sleep 5
+    echo " - Retrying shed-tools install "
+done        
 
 echo "Checking for data libraries"
 file="/data/data-library.yaml"

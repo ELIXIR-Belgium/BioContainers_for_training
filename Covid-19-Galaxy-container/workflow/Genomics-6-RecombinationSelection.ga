@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "", 
     "format-version": "0.1", 
-    "name": "6 - Recombination and selection analysis", 
+    "name": "Genomics [6] Recombination and selection analysis", 
     "steps": {
         "0": {
             "annotation": "", 
@@ -322,7 +322,8 @@
         }
     }, 
     "tags": [
-        "covid-19"
+        "covid-19",
+        "genomics"
     ], 
     "uuid": "95b1e440-ebc5-463b-ab7d-a4ca2f7f31ce", 
     "version": 0
