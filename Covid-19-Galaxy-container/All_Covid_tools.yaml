@@ -470,9 +470,3 @@ tools:
   - bf99565cec1f
   tool_panel_section_label: Covid-19
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
-- name: xchem_transfs_scoring
-  owner: bgruening
-  revisions:
-  - de29b4f35536
-  tool_panel_section_label: Covid-19
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/

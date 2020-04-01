@@ -1,8 +1,8 @@
 {
     "a_galaxy_workflow": "true",
-    "annotation": "",
+    "annotation": "Analysis of variation within individual COVID-19 samples",
     "format-version": "0.1",
-    "name": "Genomics [4] SE Variation",
+    "name": "COVID-19 - Genomics [4] SE Variation",
     "steps": {
         "0": {
             "annotation": "",
@@ -741,8 +741,7 @@
         }
     },
     "tags": [
-        "covid-19",
-        "genomics"
+        "covid-19"
     ],
     "uuid": "fafe0715-25e5-4569-9e29-711192d54bda",
     "version": 4
