@@ -1,5 +1,5 @@
 # BioContainers for training
-Here we present a base specification and guidelines in using bioinformatics containers for training purposes, including examples. Go to the subfolders folders for more information.
+Here we present a base specification and guidelines in using bioinformatics containers for training purposes, including examples. Go to the corresponding subfolders for more information.
 
 ## Containers
 Containers enable a common and controllable environment for running software and deals with some of the current problems during software development and distribution including dependencies and multiplatform usage.
