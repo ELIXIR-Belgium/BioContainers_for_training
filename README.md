@@ -1,6 +1,5 @@
 # BioContainers for training
-Here we present a base specification and guidelines in using bioinformatics containers for training purposes.\
-This repository includes examples.
+Here we present a base specification and guidelines in using bioinformatics containers for training purposes, including examples. Go to the subfolders folders for more information.
 
 ## Containers
 Containers enable a common and controllable environment for running software and deals with some of the current problems during software development and distribution including dependencies and multiplatform usage.
@@ -14,7 +13,7 @@ Supported platforms:
 * [Windows](https://docs.docker.com/docker-for-windows/install/)
 * [MacOS](https://docs.docker.com/docker-for-mac/install/)
 
-## Available containers
+## Usefull links
 
 Topic | Description
 ------------ | ------------- 
