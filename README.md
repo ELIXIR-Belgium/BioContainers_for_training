@@ -1,5 +1,11 @@
 # BioContainers for training
-Here we present a base specification and guidelines in using bioinformatics containers for training purposes, including examples. Go to the corresponding subfolders for more information.
+Here we present a base specification and guidelines in using bioinformatics containers for training purposes, including examples. 
+
+The different topics are:
+- [Galaxy container](https://github.com/ELIXIR-Belgium/BioContainers_for_training/tree/master/Galaxy_container) - Automatic workflow loading and execution inside a galaxy container
+- [Galaxy training container](https://github.com/ELIXIR-Belgium/BioContainers_for_training/tree/master/Galaxy_training_container) - Creating a new galaxy training container
+- [Nextflow container](https://github.com/ELIXIR-Belgium/BioContainers_for_training/tree/master/Nextflow_container) - Running Nextflow inside containers
+
 
 ## Containers
 Containers enable a common and controllable environment for running software and deals with some of the current problems during software development and distribution including dependencies and multiplatform usage.

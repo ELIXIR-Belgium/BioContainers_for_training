@@ -1,3 +1,5 @@
+[![Galaxy version](https://img.shields.io/badge/Galaxy%20version-20.05-blue)](https://github.com/bgruening/docker-galaxy-stable/tree/20.05)
+
 # Creating a new galaxy training container
 
 For an in depth view on the specific steps in the creation of a new tutorial please visit:
