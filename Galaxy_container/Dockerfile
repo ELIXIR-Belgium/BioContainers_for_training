@@ -7,7 +7,7 @@
 # to run image:
 #    docker run -p "8080:80" -t --mount type=bind,source="$(pwd)"/mountDir,target=/mountDir containername 
 
-FROM bgruening/galaxy-stable:19.01
+FROM quay.io/bgruening/galaxy:20.05
 MAINTAINER ELIXIR Belgium
 
 ENV GALAXY_CONFIG_BRAND "Galaxy Container"
