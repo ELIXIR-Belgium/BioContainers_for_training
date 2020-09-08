@@ -7,7 +7,8 @@
 # to run image:
 #    docker run -p "8080:80" -t --mount type=bind,source="$(pwd)"/mountDir,target=/mountDir containername 
 
-FROM quay.io/bgruening/galaxy:20.05
+FROM bgruening/galaxy-stable:19.01
+
 MAINTAINER ELIXIR Belgium
 
 ENV GALAXY_CONFIG_BRAND "Galaxy Container"
@@ -16,7 +17,7 @@ ENV GALAXY_CONFIG_LIBRARY_IMPORT_DIR "/mountDir"
 ADD bin/startingWorkflow.py /startingWorkflow.py
 ADD bin/docker-install-workflow.sh /setup-workflow.sh
 ADD bin/starter-service.sh /starter-service.sh
-ADD /dataLibrary /workflowDir/
+ADD /dataLibrary /dataLibrary/
 ADD /workflow /workflowDir
 
 RUN /setup-workflow.sh
