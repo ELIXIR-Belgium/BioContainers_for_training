@@ -19,4 +19,7 @@ ADD topics/example_topic/tutorials/ /tutorials/
 # install everything for tutorials
 ADD bin/docker-install-tutorials.sh /setup-tutorials.sh
 ADD bin/mergeyaml.py /mergeyaml.py
+ADD bin/data_libarary_download.sh /data_libarary_download.sh
+
 RUN /setup-tutorials.sh
+ENTRYPOINT ["/data_libarary_download.sh"]
