@@ -1,5 +1,3 @@
-[![Galaxy version](https://img.shields.io/badge/Galaxy%20version-20.05-blue)](https://github.com/bgruening/docker-galaxy-stable/tree/20.05)
-
 # Automatic workflow loading and execution inside a galaxy container
 Galaxy instance with tools from a workflow of interest shipped in a Docker container.
 This workflow central approach to build a container enables automated deployment and execution of workflows in a cloud environment without the need for a GUI. Input and output data is mounted in the container and not part of it. Workflow gets automatically executed at container run. 
