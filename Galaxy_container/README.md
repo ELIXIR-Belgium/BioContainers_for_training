@@ -3,7 +3,7 @@ Galaxy instance with tools from a workflow of interest shipped in a Docker conta
 This workflow central approach to build a container enables automated deployment and execution of workflows in a cloud environment without the need for a GUI. Input and output data is mounted in the container and not part of it. Workflow gets automatically executed at container run. 
 
 ## Building the docker image
-A Galaxy 20.05 container will be decorated with the necessary tools to run the workflow. 
+A Galaxy 19.01 container will be decorated with the necessary tools to run the workflow. 
 
 ### Check the DockerFile
 A Dockerfile is like a recipe and contains all the commands to assemble an image. Place the inputfiles in a repository named `inputData` and
